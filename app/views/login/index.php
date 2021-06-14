@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Fenestram</title>
-    <link rel="stylesheet" href="http://localhost/FinalProject/public/css/Awal MAsuk.css">
-    <script src="js/awalMasuk.js"></script>
+    <!-- Meta Including Start -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">   
+    <title>Login | Fenestram</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost/FinalProject/public/css/Awal MAsuk.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/FinalProject/public/css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- <script src="js/awalMasuk.js"></script> -->
 </head>
 <body>
 
-    <div id="img"><img src="http://localhost/FinalProject/public/img/Logo.png" alt="Fenestram" ></div>
+	<!-- Logo Start -->
+	<div class="logo">
+		<img src="http://localhost/FinalProject/public/img/Logo.png">
+	</div>
+	<!-- End of Logo -->
 
-    <div class="content">
+	<!-- Login Box Start -->
+	<div class="box">
+		<h2>Login</h2>
+		<form action="<?= BASEURL; ?>/Login/loginPermission" method="post">
+			<div class="inputBox">
+				<input type="text" name="email" required></input>
+				<label>Email</label>
+				<span class="input user"></span>
+			</div>
+			<div class="inputBox">
+				<input type="password" name="password" required></input>
+				<label>Password</label>
+				<span class="input pass"></span>
+			</div>
+			<h5><a href="<?= BASEURL ?>/register">Belum punya akun?</a></h5>
+			<div>
+				<input type="checkbox" name="remember" id="remember">
+				<label class="remember" for="remember">Remember me</label>
+			</div>
+			<button type="submit" name="login" id="tombol_login">Login</button>
+		</form>
+	</div>
+	<!-- End of Login Box -->
 
-        <div class="h1">
-            <p id="h1">Sign Up</p>
-            <hr size="3px" color="#0000000"><br>
-        </div>
-
-        <div id="input">
-
-            <input type="email" id="email" placeholder="Email">
-            <hr size="3px" color="#0000000"><br>
-            <input type="password" id="pass1" placeholder="Password">
-            <hr size="3px" color="#0000000"><br>
-            <input type="password" id="pass2" placeholder="Konfirmasi Password">
-            <hr size="3px" color="#0000000"><br>
-
-        </div>
-
-        <div id="check">
-
-            <input type="checkbox" id="SK">
-            <label for="SK" id="Label">
-                <a href="#"><b>Syarat</b></a>
-                dan 
-                <a href="#"><b>Ketentuan Layanan</b></a>
-            </label>
-
-        </div>
-
-        <div id="button">
-
-            <a href="html/form login.html"><button id="Login">Masuk</button></a>
-            <Button onclick="validateForm()" id="Register">Mendaftar</Button></a>
-
-        </div>
-
-    </div>
-    
 </body>
 </html>
