@@ -1,0 +1,81 @@
+body {
+    background-color: #4B00FF;
+}
+
+#img {
+    width: 365px;
+    height: 107px;
+    margin-top: 177px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#h1 {
+    font-size: 24px;
+    font-family: open sans;
+    font-weight: bolder;
+    text-align: center;
+    line-height: 0px;
+}
+
+#input input {
+    font-size: 22px;
+    font-family: open sans;
+    width: 300px;
+    border: none;
+    line-height: 0px;
+}
+
+button {
+    font-size: 19px;
+    font-family: open sans;
+}
+
+.content {
+    box-sizing: border-box;
+    width: 410px;
+    height: 437px;
+    background-color: white;
+    border-radius: 20px;
+    margin: auto;
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
+    box-shadow: 0px 12px 12px #3D24D3;
+}
+
+#Login {
+    margin-right: 8px;
+    background-color: #0AAC2A;
+    border-radius: 10px;
+    width: 148px;
+    height: 54px;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #707070;
+}
+
+#Register {
+    width: 148px;
+    height: 54px;
+    border-radius: 10px;
+    background-color: #0AAC2A;
+    font-size: 20px;
+    color: white;
+    border: 1px solid #707070;
+
+}
+
+#Label {
+    font-size: 18px;
+    font-family: open sans;
+}
+
+a {
+    color: black;
+}
+
+#SK {
+    margin-top: 3px;
+    margin-bottom: 20px;
+}
