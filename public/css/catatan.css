@@ -250,6 +250,49 @@ header{
 	padding: 20px;
 }
 
+.kotak button{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    background-color: green;
+    border-radius: 25px;
+    color: white;
+}
+
+.form{
+    font-size: 24px;
+    font-family: Helvetica;
+    width: 100%;
+}
+
+.form tr td input{
+    font-size: 24px;
+    font-family: Helvetica;
+    width: 100%;
+}
+
+.data_catatan {
+    text-align: center;
+    font-size: 22px;
+    font-family: Helvetica;
+    width: 100%;
+}
+
+.data_catatan th {
+    background-color: skyblue;
+}
+
+.data_catatan, .data_catatan td, .data_catatan th {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.data_catatan th, .data_catatan td {
+    padding: 10px;
+}
+
 footer {
 	bottom: 0px;
 	width: 100%;

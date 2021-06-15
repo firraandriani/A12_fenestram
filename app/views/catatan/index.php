@@ -62,10 +62,36 @@
         </div>
     </header>
 	<div class="kotak">
-        <div>
-            <p>tambahin di sini</p>
-        </div>
+        <form action="<?= BASEURL; ?>/catatan/tambah" method="post">
+            <table class="form">
+                <tr>
+                    <td><label for="judulBuku">Judul Buku</label></td>
+                    <td><input type="text" name="judulBuku" class="judul"></td>
+                </tr>
+                <tr>
+                    <td><label for="tanggalBaca">Tanggal Baca</label></td>
+                    <td><input type="text" name="tanggalBaca" placeholder="Contoh: 2021/04/01" class="tanggal"></td>
+                </tr>
+            </table>
+            <button type="submit">Tambahkan Catatan</button>
+        </form>
+
+        <table class="data_catatan">
+            <tr>
+                <th>Judul Buku</th>
+                <th>Jadwal Baca</th>
+                <th>Hapus Catatan</th>
+            </tr>
+            <?php foreach($data['catatan'] as $ctt) : ?>
+                <tr>
+                    <td><?= $ctt['judul_buku'] ?></td>
+                    <td><?= $ctt['jadwal_baca'] ?></td>
+                    <td><a href="<?= BASEURL;?>/catatan/hapus/<?= $ctt['id_catatan']?>">Hapus</a></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
 	</div>
+
 	<footer>
 		<div class="semua">
 			<div class="left box">

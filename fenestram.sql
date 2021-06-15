@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jun 2021 pada 18.24
+-- Waktu pembuatan: 15 Jun 2021 pada 05.49
 -- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.15
+-- Versi PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,6 +42,26 @@ INSERT INTO `anggota_jenis` (`id_jenis_anggota`, `jenis_anggota`) VALUES
 (3, 'Umum'),
 (4, 'Peneliti'),
 (5, 'Karyawan');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `catatan_user`
+--
+
+CREATE TABLE `catatan_user` (
+  `id_catatan` int(11) NOT NULL,
+  `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
+  `jadwal_baca` varchar(100) NOT NULL,
+  `judul_buku` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `catatan_user`
+--
+
+INSERT INTO `catatan_user` (`id_catatan`, `tanggal`, `jadwal_baca`, `judul_buku`) VALUES
+(13, '2021-06-15 03:46:32', '2021/06/15', 'Matahari');
 
 -- --------------------------------------------------------
 
@@ -240,7 +260,8 @@ INSERT INTO `user` (`id_user`, `email`, `password`, `nama`, `id_profil`) VALUES
 (2, 'nana.wijayanto@gmail.com', '1234', 'Nana Wijayanto', NULL),
 (3, 'penggemarpb40@gmail.com', '1234', 'Ibnu Qomaril Huda', NULL),
 (4, 'anung.Firdaus@gmail.com', '1234', 'Anung Firdauzy', NULL),
-(5, 'fitria.anggraeni@gmail.com', '1234', 'Fitria Anggraeni', 16);
+(5, 'fitria.anggraeni@gmail.com', '1234', 'Fitria Anggraeni', 16),
+(6, 'test@gmail.com', '1234', 'test', NULL);
 
 --
 -- Indexes for dumped tables
@@ -251,6 +272,12 @@ INSERT INTO `user` (`id_user`, `email`, `password`, `nama`, `id_profil`) VALUES
 --
 ALTER TABLE `anggota_jenis`
   ADD PRIMARY KEY (`id_jenis_anggota`);
+
+--
+-- Indeks untuk tabel `catatan_user`
+--
+ALTER TABLE `catatan_user`
+  ADD PRIMARY KEY (`id_catatan`);
 
 --
 -- Indeks untuk tabel `gender`
@@ -311,6 +338,12 @@ ALTER TABLE `anggota_jenis`
   MODIFY `id_jenis_anggota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT untuk tabel `catatan_user`
+--
+ALTER TABLE `catatan_user`
+  MODIFY `id_catatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT untuk tabel `gender`
 --
 ALTER TABLE `gender`
@@ -356,7 +389,7 @@ ALTER TABLE `status_kawin`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
