@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jun 2021 pada 05.49
+-- Waktu pembuatan: 15 Jun 2021 pada 16.29
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.2
 
@@ -51,8 +51,9 @@ INSERT INTO `anggota_jenis` (`id_jenis_anggota`, `jenis_anggota`) VALUES
 
 CREATE TABLE `catatan_user` (
   `id_catatan` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
-  `jadwal_baca` varchar(100) NOT NULL,
+  `jadwal_baca` date NOT NULL,
   `judul_buku` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -60,8 +61,8 @@ CREATE TABLE `catatan_user` (
 -- Dumping data untuk tabel `catatan_user`
 --
 
-INSERT INTO `catatan_user` (`id_catatan`, `tanggal`, `jadwal_baca`, `judul_buku`) VALUES
-(13, '2021-06-15 03:46:32', '2021/06/15', 'Matahari');
+INSERT INTO `catatan_user` (`id_catatan`, `id_user`, `tanggal`, `jadwal_baca`, `judul_buku`) VALUES
+(15, 6, '2021-06-15 13:13:53', '0000-00-00', 'Matahari');
 
 -- --------------------------------------------------------
 
@@ -163,7 +164,7 @@ INSERT INTO `pekerjaan` (`id_pekerjaan`, `nama_pekerjaan`) VALUES
 
 CREATE TABLE `profil` (
   `id` int(255) NOT NULL,
-  `nomor_identitas` bigint(255) NOT NULL,
+  `nomor_identitas` bigint(255) DEFAULT NULL,
   `nama_panggilan` varchar(60) DEFAULT NULL,
   `id_kota` int(5) NOT NULL,
   `tanggal_lahir` date NOT NULL,
@@ -277,7 +278,8 @@ ALTER TABLE `anggota_jenis`
 -- Indeks untuk tabel `catatan_user`
 --
 ALTER TABLE `catatan_user`
-  ADD PRIMARY KEY (`id_catatan`);
+  ADD PRIMARY KEY (`id_catatan`),
+  ADD KEY `id_user` (`id_user`);
 
 --
 -- Indeks untuk tabel `gender`
@@ -341,7 +343,7 @@ ALTER TABLE `anggota_jenis`
 -- AUTO_INCREMENT untuk tabel `catatan_user`
 --
 ALTER TABLE `catatan_user`
-  MODIFY `id_catatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_catatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `gender`
@@ -390,6 +392,16 @@ ALTER TABLE `status_kawin`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+--
+
+--
+-- Ketidakleluasaan untuk tabel `catatan_user`
+--
+ALTER TABLE `catatan_user`
+  ADD CONSTRAINT `catatan_user_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
