@@ -38,7 +38,7 @@ header{
     flex: 1;
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 100px;
 }
 
 .nav-btn{
@@ -437,19 +437,19 @@ a {
 }
 
 .rekomendasi .kategori {
-    font-size: 0.8em;
+    font-size: 1.2em;
     color: red;
     margin-bottom: 10px;
 }
 
 .rekomendasi .judul {
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .rekomendasi .penulis {
-    font-size: 0.8em;
+    font-size: 1.2em;
 }
 
 .rekomendasi .tulisan {
@@ -471,8 +471,12 @@ a {
     width: 100px;
 }
 
+.recfy .header {
+    font-size: 1.5em;
+}
+
 .recfy .kategori {
-    font-size: 0.8em;
+    font-size: 1.2em;
     color: red;
 }
 
@@ -481,7 +485,7 @@ a {
 }
 
 .recfy .penulis {
-    font-size: 0.8em;
+    font-size: 1.2em;
 }
 
 footer {

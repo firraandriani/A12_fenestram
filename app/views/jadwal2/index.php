@@ -77,36 +77,36 @@
 
     <div class="main">
         <div class="card">
-            <a href="<?= BASEURL ?>/book"><img src="<?= BASEURL ?>/img/dear nathan.jpg" alt="Sampul"></a>
-            <a href="<?= BASEURL ?>/book" style="color: #000"><p >Dear Nathan</p></a>
+            <img src="<?= BASEURL ?>/img/bintang.jpg" alt="Sampul">
+            <p >Bintang</p>
         </div>
         <div class="card">
-            <img src="<?= BASEURL ?>/img/the In Between.png" alt="Sampul">
-            <p>The In Between</p>
-        </div>
-        <div class="card">
-            <img src="<?= BASEURL ?>/img/The UnHappi Mariage with You.png" alt="Sampul">
-            <p>The (Un)Happy Mariage</p>
-        </div>
-        <div class="card">
-            <img src="<?= BASEURL ?>/img/Expresso.png" alt="Sampul">
-            <p>Expresso</p>
-        </div>
-        <div class="card">
-            <img src="<?= BASEURL ?>/img/Rahasia Soeratmi.png" alt="Sampul">
-            <p>Rahasia Soeratmi</p>
-        </div>
-        <div class="card">
-            <img src="<?= BASEURL ?>/img/The Unforgettable.png" alt="Sampul">
+        <img src="<?= BASEURL ?>/img/The Unforgettable.png" alt="Sampul">
             <p>The Unforgettable</p>
         </div>
         <div class="card">
-            <img src="<?= BASEURL ?>/img/Chamolypi.png" alt="Sampul">
-            <p>Charmolypi</p>
+            <img src="<?= BASEURL ?>/img/3. Matahari.jpg" alt="Sampul">
+            <p>Matahari</p>
         </div>
         <div class="card">
-            <img src="<?= BASEURL ?>/img/Both Of You.png" alt="Sampul">
-            <p>Both of You</p>
+            <img src="<?= BASEURL ?>/img/4. Rumah Kaca.jpg" alt="Sampul">
+            <p>Rumah Kaca</p>
+        </div>
+        <div class="card">
+            <img src="<?= BASEURL ?>/img/5. Selena.jpg" alt="Sampul">
+            <p>Selena</p>
+        </div>
+        <div class="card">
+            <img src="<?= BASEURL ?>/img/6. Bumi.jpg" alt="Sampul">
+            <p>Bumi</p>
+        </div>
+        <div class="card">
+            <img src="<?= BASEURL ?>/img/1. Kau, Aku.jpg" alt="Sampul">
+            <p>Kau, Aku, dan, Sepucuk Angpau Merah</p>
+        </div>
+        <div class="card">
+            <img src="<?= BASEURL ?>/img/Bulan.jpg" alt="Sampul">
+            <p>Bulan</p>
         </div>
         <div class="card">
             <img src="<?= BASEURL ?>/img/Remember me Margareth.png" alt="Sampul">

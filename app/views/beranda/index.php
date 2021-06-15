@@ -95,13 +95,13 @@
     
                 <div class="minichard">
                     <div class="cover">
-                        <img src="<?= BASEURL ?>/img/2. Laskar Pelangi.jpg" alt="">
+                        <img src="<?= BASEURL ?>/img/Bulan.jpg" alt="">
                     </div>
     
                     <div class="tulisan">
                         <p class="kategori">Novel</p>
-                        <p class="judul">Laskar Pelangi</p>
-                        <p class="penulis">Andrea Hirata</p>
+                        <p class="judul">Bintang</p>
+                        <p class="penulis">Tere Liye</p>
                     </div>
                 </div>
     
@@ -159,8 +159,8 @@
             <div class="byAge">
     
                 <div class="header">
-                    <p>Berdasarkan usia ></p>
-                    <select class="pilihUsia" nama="pilihUsia" id = "pilihUsia">
+                    <p style="font-size: 1.3em">Berdasarkan usia ></p>
+                    <select class="pilihUsia" nama="pilihUsia" id = "pilihUsia" style="font-size: 1.3em">
                         <option value="a">Remaja</option>
                         <option value="b">Anak (6-12)</option>
                         <option value="c">Anak (1-5)</option>
@@ -170,11 +170,11 @@
     
                 <div class="chard">
                     <div class="cover">
-                        <img src="<?= BASEURL ?>/img/dear nathan.jpg" alt="">
+                        <a href="<?= BASEURL ?>/book"><img src="<?= BASEURL ?>/img/dear nathan.jpg" alt=""></a>
                     </div>
                     <div class="tulisan">
                         <p class="kategori">Novel</p>
-                        <p class="judul">Dear Nathan</p>
+                        <a href="<?= BASEURL ?>/book" style="color: #000"><p class="judul">Dear Nathan</p></a>
                         <p class="penulis">Erisca Febriani</p>
                     </div>
                 </div>
@@ -206,8 +206,8 @@
             <div class="byKategori">
     
                 <div class="header">
-                    <p>Berdasarkan Jenis Buku ></p>
-                    <select class="pilihUsia" nama="pilihUsia" id = "pilihUsia">
+                    <p style="font-size: 1.3em">Berdasarkan Jenis Buku ></p>
+                    <select class="pilihUsia" nama="pilihUsia" id = "pilihUsia" style="font-size: 1.3em">
                         <option value="a">Novel</option>
                         <option value="b">Komik</option>
                         <option value="c">Sekolah</option>

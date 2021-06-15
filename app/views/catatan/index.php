@@ -70,7 +70,7 @@
                 </tr>
                 <tr>
                     <td><label for="tanggalBaca">Tanggal Baca</label></td>
-                    <td><input type="text" name="tanggalBaca" placeholder="Contoh: 2021/04/01" class="tanggal"></td>
+                    <td><input type="date" name="tanggalBaca" class="tanggal"></td>
                 </tr>
             </table>
             <button type="submit">Tambahkan Catatan</button>
@@ -78,15 +78,17 @@
 
         <table class="data_catatan">
             <tr>
+                <th>Tanggal</th>
                 <th>Judul Buku</th>
                 <th>Jadwal Baca</th>
-                <th>Hapus Catatan</th>
+                <th>Action</th>
             </tr>
             <?php foreach($data['catatan'] as $ctt) : ?>
                 <tr>
+                    <td><?= $ctt['tanggal'] ?></td>
                     <td><?= $ctt['judul_buku'] ?></td>
                     <td><?= $ctt['jadwal_baca'] ?></td>
-                    <td><a href="<?= BASEURL;?>/catatan/hapus/<?= $ctt['id_catatan']?>">Hapus</a></td>
+                    <td><a class = 'edit' href = ''><img src='<?= BASEURL ?>/img/edit.png' width='20' height='20'>Edit</a><a href="<?= BASEURL;?>/catatan/hapus/<?= $ctt['id_catatan']?>" class="hapus"><img src='<?= BASEURL ?>/img/hapus.png' width='20' height='20'>Hapus</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>

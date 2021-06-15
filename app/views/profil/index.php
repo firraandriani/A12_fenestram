@@ -76,7 +76,7 @@
 			<div class="form">
 				<b class="judul">DATA DIRI</b>
 				<div class="inputfield">
-					<label class="dataDiri">NIS/NIM/NIP *</label>
+					<label class="dataDiri">NIS/NIM/NIP</label>
 					<input class="diri" id="nis" name="nomor_identitas" type="text" placeholder="Masukkan NIS/NIM/NIP" value="<?= $data['nomor_identitas'] ?? '' ?>">
 				</div>
 				<div class="inputfield">
@@ -294,6 +294,5 @@
 			</div>
 		</div>
 	</footer>
-	<script src="../js/profil.js"></script>
 </body>
 </html>

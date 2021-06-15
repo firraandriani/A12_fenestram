@@ -38,7 +38,7 @@ header{
     flex: 1;
     display: flex;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 100px;
 }
 
 .nav-btn{
@@ -246,7 +246,7 @@ header{
 	width: 100%;
 	background: #fff;
 	margin: 20px auto;
-	box-shadow: 0 5px 5px 0;
+	box-shadow: 0 0px 5px 0;
 	padding: 20px;
 }
 
@@ -267,10 +267,59 @@ header{
     width: 100%;
 }
 
-.form tr td input{
+.form label{
+    font-weight: bold;
+}
+
+.hapus{
+    text-decoration: none;
+    background-color: #FFABAB;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: Arial;
+    font-weight: bold;
+    color: black;
+}
+
+.edit {
+    text-decoration: none;
+    background-color: #3FC380;
+    padding: 10px 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-family: Arial;
+    font-weight: bold;
+    color: black;
+    margin-right: 10px;
+}
+
+.judul{
+    margin-top: 10px;
     font-size: 24px;
     font-family: Helvetica;
     width: 100%;
+    outline: none;
+    border-color: #1c81d3;
+	padding-left: 10px;
+	border-radius: 8px;
+	height: 38px;
+	transition: all 0.3s ease;
+	background-color: rgba(235, 235, 235, 0.4);
+}
+
+.tanggal{
+    margin-top: 10px;
+    font-size: 24px;
+    font-family: Helvetica;
+    width: 50%;
+    outline: none;
+    border-color: #1c81d3;
+	padding-left: 10px;
+	border-radius: 8px;
+	height: 38px;
+	transition: all 0.3s ease;
+	background-color: rgba(235, 235, 235, 0.4);
 }
 
 .data_catatan {
@@ -290,7 +339,7 @@ header{
 }
 
 .data_catatan th, .data_catatan td {
-    padding: 10px;
+    padding: 15px;
 }
 
 footer {
