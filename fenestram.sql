@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jun 2021 pada 16.29
+-- Waktu pembuatan: 15 Jun 2021 pada 18.42
 -- Versi server: 10.4.17-MariaDB
--- Versi PHP: 8.0.2
+-- Versi PHP: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,7 +53,7 @@ CREATE TABLE `catatan_user` (
   `id_catatan` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
-  `jadwal_baca` date NOT NULL,
+  `jadwal_baca` date DEFAULT NULL,
   `judul_buku` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -62,7 +62,9 @@ CREATE TABLE `catatan_user` (
 --
 
 INSERT INTO `catatan_user` (`id_catatan`, `id_user`, `tanggal`, `jadwal_baca`, `judul_buku`) VALUES
-(15, 6, '2021-06-15 13:13:53', '0000-00-00', 'Matahari');
+(15, 6, '2021-06-15 13:13:53', '0000-00-00', 'Matahari'),
+(16, 2, '2021-06-15 16:17:59', '0000-00-00', 'Bulan'),
+(18, 2, '2021-06-15 16:40:36', '2021-06-24', 'Matahari');
 
 -- --------------------------------------------------------
 
@@ -191,7 +193,13 @@ CREATE TABLE `profil` (
 
 INSERT INTO `profil` (`id`, `nomor_identitas`, `nama_panggilan`, `id_kota`, `tanggal_lahir`, `nomor_hp`, `id_hobi`, `id_jenis_kelamin`, `id_jenis_anggota`, `id_status_perkawinan`, `id_pekerjaan`, `alamat_tinggal`, `id_kota_tinggal`, `id_provinsi_tinggal`, `nama_institusi`, `alamat_institusi`, `id_kota_institusi`, `id_provinsi_institusi`, `kelas`, `jurusan`) VALUES
 (15, 192410103000, 'Ibnu', 3, '2020-06-14', 85122123456, '1', 1, 2, 0, 1, 'Jalan Gurame', 3, 1, 'Univ Jember', 'Jalan Kalimantan', 2, 1, 1, 'SI'),
-(16, 192410103000, 'Fitri', 3, '1999-01-21', 85122123456, '1', 2, 3, 2, 5, 'Jalan Bali', 3, 1, 'Blitar', 'Jalan Kalimantan', 2, 1, 1, 'SI');
+(16, 192410103000, 'Fitri', 3, '1999-01-21', 85122123456, '1', 2, 3, 2, 5, 'Jalan Bali', 3, 1, 'Blitar', 'Jalan Kalimantan', 2, 1, 1, 'SI'),
+(17, 55555, 'Panggilan', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
+(18, 55555, 'Panggilan', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
+(19, 55555, 'Panggilan', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
+(20, 55555, 'Panggilan', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
+(21, 5555666777, 'Panggilanaa', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
+(22, 1111, 'aaaaa', 5, '2021-05-30', 86578792, '1,3', 1, 2, 1, 1, 'jj', 2, 4, '', '', 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -258,9 +266,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `email`, `password`, `nama`, `id_profil`) VALUES
 (1, 'firra.andriani22@gmaill.com', '1234', 'Firra Andriani', NULL),
-(2, 'nana.wijayanto@gmail.com', '1234', 'Nana Wijayanto', NULL),
-(3, 'penggemarpb40@gmail.com', '1234', 'Ibnu Qomaril Huda', NULL),
-(4, 'anung.Firdaus@gmail.com', '1234', 'Anung Firdauzy', NULL),
+(2, 'nana.wijayanto@gmail.com', '123', 'Nana Wijayanto', 22),
+(3, 'penggemarpb40@gmail.com', '1234', 'Ibnu Qomaril Huda', 21),
+(4, 'anung.Firdauzy@gmail.com', '123', 'Anung Firdauzy', NULL),
 (5, 'fitria.anggraeni@gmail.com', '1234', 'Fitria Anggraeni', 16),
 (6, 'test@gmail.com', '1234', 'test', NULL);
 
@@ -343,7 +351,7 @@ ALTER TABLE `anggota_jenis`
 -- AUTO_INCREMENT untuk tabel `catatan_user`
 --
 ALTER TABLE `catatan_user`
-  MODIFY `id_catatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_catatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `gender`
@@ -373,7 +381,7 @@ ALTER TABLE `pekerjaan`
 -- AUTO_INCREMENT untuk tabel `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinsi`
