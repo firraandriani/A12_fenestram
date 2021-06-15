@@ -3,7 +3,13 @@
 class Book extends Controller {
     public function index() 
     {
-        $this->view('book/index');
+        session_start();
+        $id_user = $_SESSION['id'];
+        $user = $this->model('User_model')->getUserById($id_user);
+
+        $data['nama'] = $user['nama'];
+
+        $this->view('book/index', $data);
     }
 }
 

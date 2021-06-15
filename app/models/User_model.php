@@ -64,4 +64,20 @@ class User_model {
 
         return $this->db->rowCount();
     }
+
+    public function updateUser($data)
+    {
+        session_start();
+        $id_user = $_SESSION['id'];
+        
+        $query = "UPDATE user SET email = :email, password = :password, nama = :nama WHERE id_user = :id_user";
+        $this->db->query($query);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('password', $data['password']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('id_user', $id_user);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }

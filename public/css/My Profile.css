@@ -117,15 +117,11 @@ header{
     display: flex;
     background-color: #fff;
     color: #3498db;
-    padding: .5rem 1rem;
+    padding: 8px;
     font-size: .9rem;
     align-items: center;
     justify-content: space-between;
     transition: .3s;
-}
-
-.dropdown-link:nth-last-child(4){
-    border-bottom: 1.5px solid rgba(0,0,0,0.5);
 }
 
 .dropdown-link:first-child{

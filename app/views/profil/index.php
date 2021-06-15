@@ -37,11 +37,11 @@
                                     <li class="dropdown-link">
                                     	<a href="#" style="color: #A9A9A9;"><?= $data['nama'] ?? '' ?></a>
                                     </li>
-                                    <li class="dropdown-link" style="">
-                                        <a href="#" style="color: #A9A9A9"><?= $data['tanggal_lahir'] ?? '' ?></a>
+									<li class="dropdown-link" style="background-color: #FFFFFF; font-family: open sans; font-size: 0.8em;">
+                                        <img src="<?= BASEURL ?>/img/images (2).png" width="25" height="25" style="margin-left: 10px; margin-top: 10px"><span><a href="<?= BASEURL ?>/akun" style="color: #000; margin-left: 10px;">Pengaturan Akun</a></span>
                                     </li>
-                                    <li class="dropdown-link" style="background-color: #FFFFFF; font-family: open sans; font-size: 0.8em;">
-                                        <img src="<?= BASEURL ?>/img/images (2).png" width="25" height="25" style="margin-left: 10px; margin-top: 10px"><span><a href="<?= BASEURL ?>/profil" style="color: #000; margin-left: 10px;">Pengaturan Akun</a></span>
+									<li class="dropdown-link" style="background-color: #FFFFFF; font-family: open sans; font-size: 0.8em;">
+                                        <img src="<?= BASEURL ?>/img/Profil.png" width="25" height="25" style="margin-left: 10px; margin-top: 10px"><span><a href="<?= BASEURL ?>/profil" style="color: #000; margin-left: 10px;">Pengaturan Profil</a></span>
                                     </li>
                                     <li class="dropdown-link" style="background-color: #FFFFFF; font-family: open sans; font-size: 0.8em;">
                                         <img src="<?= BASEURL ?>/img/25706.png" width="25" height="25" style="margin-left: 10px; margin-top: 10px"><span><a href="<?= BASEURL ?>/logout" style="color: #000; margin-left: 10px;">Keluarkan Akun</a></span>
@@ -76,13 +76,12 @@
 			<div class="form">
 				<b class="judul">DATA DIRI</b>
 				<div class="inputfield">
-					<label class="dataDiri">NIS/NIM/NIP</label>
-					<input class="diri" id="nis" name="nomor_identitas" type="text" placeholder="Masukkan NIS/NIM/NIP" value="<?= $data['nomor_identitas'] ?? '' ?>">
+					<input name="id" type="hidden" value="<?= $data['id'] ?? '' ?>">
 				</div>
 				<div class="inputfield">
-					<label class="dataDiri">Nama Lengkap *</label>
-					<input class="diri" id="namaLengkap" name="nama" type="text" placeholder="Masukkan Nama Lengkap Anda" value="<?= $data['nama'] ?? '' ?>">
-				</div>  
+					<label class="dataDiri">NIS/NIM/NIP</label>
+					<input class="diri" id="nis" name="nomor_identitas" type="text" placeholder="Masukkan NIS/NIM/NIP" value="<?= $data['nomor_identitas'] ?? '' ?>">
+				</div> 
 				<div class="inputfield">
 					<label class="dataDiri">Nama Panggilan</label>
 					<input class="diri" name="nama_panggilan" type="text" placeholder="Masukkan Nama Panggilan Anda" value="<?= $data['nama_panggilan'] ?? '' ?>">
@@ -91,16 +90,16 @@
 					<label class="dataDiri">Kota Lahir *</label>
 					<div style="width: 100%;">
 						<select class="select" name="id_kota" id="tempatLahir">
-							<option value="" <?php if ($data['id_kota'] == '') echo 'selected' ?>>-Pilih Kota-</option>
-							<option value="1" <?php if ($data['id_kota'] == 1) echo 'selected' ?>>Kediri</option>
-							<option value="2" <?php if ($data['id_kota'] == 2) echo 'selected' ?>>Jember</option>
-							<option value="3" <?php if ($data['id_kota'] == 3) echo 'selected' ?>>Blitar</option>
-							<option value="4" <?php if ($data['id_kota'] == 4) echo 'selected' ?>>Tulungagung</option>
-							<option value="5" <?php if ($data['id_kota'] == 5) echo 'selected' ?>>Jakarta</option>
-							<option value="6" <?php if ($data['id_kota'] == 6) echo 'selected' ?>>Trenggalek</option>
-							<option value="7" <?php if ($data['id_kota'] == 7) echo 'selected' ?>>Jombang</option>
-							<option value="8" <?php if ($data['id_kota'] == 8) echo 'selected' ?>>Pasuruan</option>
-							<option value="9" <?php if ($data['id_kota'] == 9) echo 'selected' ?>>Banyuwangi</option>
+							<option value="" <?= (isset($data['id_kota']) && $data['id_kota'] == '') ? 'selected' : '' ?>>-Pilih Kota-</option>
+							<option value="1" <?= (isset($data['id_kota']) && $data['id_kota'] == 1) ? 'selected' : '' ?>>Kediri</option>
+							<option value="2" <?= (isset($data['id_kota']) && $data['id_kota'] == 2) ? 'selected' : '' ?>>Jember</option>
+							<option value="3" <?= (isset($data['id_kota']) && $data['id_kota'] == 3) ? 'selected' : '' ?>>Blitar</option>
+							<option value="4" <?= (isset($data['id_kota']) && $data['id_kota'] == 4) ? 'selected' : '' ?>>Tulungagung</option>
+							<option value="5" <?= (isset($data['id_kota']) && $data['id_kota'] == 5) ? 'selected' : '' ?>>Jakarta</option>
+							<option value="6" <?= (isset($data['id_kota']) && $data['id_kota'] == 6) ? 'selected' : '' ?>>Trenggalek</option>
+							<option value="7" <?= (isset($data['id_kota']) && $data['id_kota'] == 7) ? 'selected' : '' ?>>Jombang</option>
+							<option value="8" <?= (isset($data['id_kota']) && $data['id_kota'] == 8) ? 'selected' : '' ?>>Pasuruan</option>
+							<option value="9" <?= (isset($data['id_kota']) && $data['id_kota'] == 9) ? 'selected' : '' ?>>Banyuwangi</option>
 						</select>
 					</div>
 				</div> 
@@ -117,95 +116,91 @@
 				<div class="inputfield">
 					<label class="dataDiri">Hobi</label>
 					<div style="width: 100%;">
-						<input class="radio" type="checkbox" name="id_hobi[]" value="1" <?php if (in_array(1, $data['id_hobi'])) echo 'checked' ?>> 
+						<input class="radio" type="checkbox" name="id_hobi[]" value="1" <?= (isset($data['id_hobi']) && in_array(1, $data['id_hobi'])) ? 'checked' : '' ?>> 
 						<span class="pilihan">Membaca</span>
-						<input class="radio2" type="checkbox" name="id_hobi[]" value="2" <?php if (in_array(2, $data['id_hobi'])) echo 'checked' ?>>
+						<input class="radio2" type="checkbox" name="id_hobi[]" value="2" <?= (isset($data['id_hobi']) && in_array(2, $data['id_hobi'])) ? 'checked' : '' ?>>
 						<span class="pilihan">Menulis</span><br>
-						<input class="radio" type="checkbox" name="id_hobi[]" value="3" <?php if (in_array(3, $data['id_hobi'])) echo 'checked' ?>>
+						<input class="radio" type="checkbox" name="id_hobi[]" value="3" <?= (isset($data['id_hobi']) && in_array(3, $data['id_hobi'])) ? 'checked' : '' ?>>
 						<span class="pilihan">Menyanyi</span>
-						<input class="radio3" type="checkbox" name="id_hobi[]" value="4" <?php if (in_array(4, $data['id_hobi'])) echo 'checked' ?>>
+						<input class="radio3" type="checkbox" name="id_hobi[]" value="4" <?= (isset($data['id_hobi']) && in_array(4, $data['id_hobi'])) ? 'checked' : '' ?>>
 						<span class="pilihan">Menari</span><br>
-						<input class="radio" type="checkbox" name="id_hobi[]" value="5" <?php if (in_array(5, $data['id_hobi'])) echo 'checked' ?>>
+						<input class="radio" type="checkbox" name="id_hobi[]" value="5" <?= (isset($data['id_hobi']) && in_array(5, $data['id_hobi'])) ? 'checked' : '' ?>>
 						<span class="pilihan">Menonton Film</span><br>
 					</div>
 				</div> 
 				<div class="inputfield">
-					<label class="dataDiri">Alamat Email *</label>
-					<input class="diri" id="email" name="email" type="email" placeholder="Masukkan Email" value="<?= $data['email'] ?? '' ?>">
-				</div>
-				<div class="inputfield">
 					<label class="dataDiri">Jenis Kelamin *</label>
 					<div style="width: 100%;">
-						<input class="radio" name="id_jenis_kelamin" id="male" value="1" type="radio" <?php if ($data['id_jenis_kelamin'] == 1) echo 'checked' ?>/><span class="pilihan">Laki-laki</span><br>
-						<input class="radio" name="id_jenis_kelamin" id="female" value="2" type="radio" <?php if ($data['id_jenis_kelamin'] == 2) echo 'checked' ?>/><span class="pilihan">Perempuan</span><br>
+						<input class="radio" name="id_jenis_kelamin" id="male" value="1" type="radio" <?= (isset($data['id_jenis_kelamin']) && $data['id_jenis_kelamin'] == 1) ? 'checked' : '' ?>/><span class="pilihan">Laki-laki</span><br>
+						<input class="radio" name="id_jenis_kelamin" id="female" value="2" type="radio" <?= (isset($data['id_jenis_kelamin']) && $data['id_jenis_kelamin'] == 2) ? 'checked' : '' ?>/><span class="pilihan">Perempuan</span><br>
 					</div>
 				</div> 
 				<div class="inputfield">
 					<label class="dataDiri">Jenis Anggota *</label>
 					<div style="width: 100%;">
 						<select class="select" name="id_jenis_anggota" id ="jenisAnggota">
-							<option value="" <?php if ($data['id_jenis_anggota'] == '') echo 'selected' ?>>-Pilih Jenis Anggota-</option>
-							<option value="1" <?php if ($data['id_jenis_anggota'] == 1) echo 'selected' ?>>Pelajar</option>
-							<option value="2" <?php if ($data['id_jenis_anggota'] == 2) echo 'selected' ?>>Mahasiswa</option>
-							<option value="3" <?php if ($data['id_jenis_anggota'] == 3) echo 'selected' ?>>Umum</option>
-							<option value="4" <?php if ($data['id_jenis_anggota'] == 4) echo 'selected' ?>>Peneliti</option>
-							<option value="5" <?php if ($data['id_jenis_anggota'] == 5) echo 'selected' ?>>Karyawan</option>
+							<option value="" <?= (isset($data['id_jenis_anggota']) && $data['id_jenis_anggota'] == '') ? 'selected' : ''  ?>>-Pilih Jenis Anggota-</option>
+							<option value="1" <?= (isset($data['id_jenis_anggota']) && $data['id_jenis_anggota'] == 1)  ? 'selected' : '' ?>>Pelajar</option>
+							<option value="2" <?= (isset($data['id_jenis_anggota']) && $data['id_jenis_anggota'] == 2)  ? 'selected' : '' ?>>Mahasiswa</option>
+							<option value="3" <?= (isset($data['id_jenis_anggota']) && $data['id_jenis_anggota'] == 3)  ? 'selected' : '' ?>>Umum</option>
+							<option value="4" <?= (isset($data['id_jenis_anggota']) && $data['id_jenis_anggota'] == 4)  ? 'selected' : '' ?>>Peneliti</option>
+							<option value="5" <?= (isset($data['id_jenis_anggota']) && $data['id_jenis_anggota'] == 5)  ? 'selected' : '' ?>>Karyawan</option>
 						</select>
 					</div>
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri">Status Perkawinan</label>
 					<div style="width: 100%;">
-						<input class="radio" name="id_status_perkawinan" id="belum" value="1" type="radio" <?php if ($data['id_status_perkawinan'] == 1) echo 'checked' ?>/><span class="pilihan">Belum Menikah</span><br>
-						<input class="radio" name="id_status_perkawinan" id="sudah" value="2" type="radio" <?php if ($data['id_status_perkawinan'] == 2) echo 'checked' ?>/><span class="pilihan">Menikah</span><br>
+						<input class="radio" name="id_status_perkawinan" id="belum" value="1" type="radio" <?= (isset($data['id_status_perkawinan']) && $data['id_status_perkawinan'] == 1) ? 'checked' : '' ?>/><span class="pilihan">Belum Menikah</span><br>
+						<input class="radio" name="id_status_perkawinan" id="sudah" value="2" type="radio" <?= (isset($data['id_status_perkawinan']) && $data['id_status_perkawinan'] == 2) ? 'checked' : '' ?>/><span class="pilihan">Menikah</span><br>
 					</div>
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri">Pekerjaan *</label>
 					<div style="width: 100%;">
 						<select class="select" name="id_pekerjaan" id="kerja">
-							<option value="" <?php if ($data['id_pekerjaan'] == '') echo 'selected' ?>>-Pilih Pekerjaan-</option>
-							<option value="1" <?php if ($data['id_pekerjaan'] == 1) echo 'selected' ?>>Mahasiswa</option>
-							<option value="2" <?php if ($data['id_pekerjaan'] == 2) echo 'selected' ?>>Pelajar</option>
-							<option value="3" <?php if ($data['id_pekerjaan'] == 3) echo 'selected' ?>>Pegawai Swasta</option>
-							<option value="4" <?php if ($data['id_pekerjaan'] == 4) echo 'selected' ?>>Pegawai Negeri</option>
-							<option value="5" <?php if ($data['id_pekerjaan'] == 5) echo 'selected' ?>>Wiraswasta</option>
-							<option value="6" <?php if ($data['id_pekerjaan'] == 6) echo 'selected' ?>>Guru</option>
-							<option value="7" <?php if ($data['id_pekerjaan'] == 7) echo 'selected' ?>>Dosen</option>
-							<option value="8" <?php if ($data['id_pekerjaan'] == 8) echo 'selected' ?>>Peneliti</option>
+							<option value="" <?= (isset($data['id_pekerjaan']) && $data['id_pekerjaan'] == '') ? 'selected' : '' ?>>-Pilih Pekerjaan-</option>
+							<option value="1" <?= (isset($data['id_pekerjaan']) && $data['id_pekerjaan'] == 1) ? 'selected' : '' ?>>Mahasiswa</option>
+							<option value="2" <?= (isset($data['id_pekerjaan']) && $data['id_pekerjaan'] == 2) ? 'selected' : '' ?>>Pelajar</option>
+							<option value="3" <?= (isset($data['id_pekerjaan']) && $data['id_pekerjaan'] == 3) ? 'selected' : '' ?>>Pegawai Swasta</option>
+							<option value="4" <?= (isset($data['id_pekerjaan']) && $data['id_pekerjaan'] == 4) ? 'selected' : '' ?>>Pegawai Negeri</option>
+							<option value="5" <?= (isset($data['id_pekerjaan']) && $data['id_pekerjaan'] == 5) ? 'selected' : '' ?>>Wiraswasta</option>
+							<option value="6" <?= (isset($data['id_pekerjaan']) && $data['id_pekerjaan'] == 6) ? 'selected' : '' ?>>Guru</option>
+							<option value="7" <?= (isset($data['id_pekerjaan']) && $data['id_pekerjaan'] == 7) ? 'selected' : '' ?>>Dosen</option>
+							<option value="8" <?= (isset($data['id_pekerjaan']) && $data['id_pekerjaan'] == 8) ? 'selected' : '' ?>>Peneliti</option>
 						</select>
 					</div>
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri">Alamat Tinggal *</label>
-					<textarea name="alamat_tinggal" id="alamatTinggal" placeholder="Masukkan Alamat Anda sesuai Identitas" class="textarea"><?php echo $data['alamat_tinggal'] ?></textarea>
+					<textarea name="alamat_tinggal" id="alamatTinggal" placeholder="Masukkan Alamat Anda sesuai Identitas" class="textarea"><?= isset($data['alamat_tinggal']) ? $data['alamat_tinggal'] : '' ?></textarea>
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri"> </label>
 					<div style="width: 100%;">
 						<select class="select" id="kotaTinggal" name="id_kota_tinggal">
-							<option value="" <?php if ($data['id_kota_tinggal'] == '') echo 'selected' ?>>-Pilih Kota-</option>
-							<option value="1" <?php if ($data['id_kota_tinggal'] == 1) echo 'selected' ?>>Kediri</option>
-							<option value="2" <?php if ($data['id_kota_tinggal'] == 2) echo 'selected' ?>>Jember</option>
-							<option value="3" <?php if ($data['id_kota_tinggal'] == 3) echo 'selected' ?>>Blitar</option>
-							<option value="4" <?php if ($data['id_kota_tinggal'] == 4) echo 'selected' ?>>Tulungagung</option>
-							<option value="5" <?php if ($data['id_kota_tinggal'] == 5) echo 'selected' ?>>Jakarta</option>
-							<option value="6" <?php if ($data['id_kota_tinggal'] == 6) echo 'selected' ?>>Trenggalek</option>
-							<option value="7" <?php if ($data['id_kota_tinggal'] == 7) echo 'selected' ?>>Jombang</option>
-							<option value="8" <?php if ($data['id_kota_tinggal'] == 8) echo 'selected' ?>>Pasuruan</option>
-							<option value="9" <?php if ($data['id_kota_tinggal'] == 9) echo 'selected' ?>>Banyuwangi</option>
+							<option value="" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == '') ? 'selected' : '' ?>>-Pilih Kota-</option>
+							<option value="1" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 1) ? 'selected' : '' ?>>Kediri</option>
+							<option value="2" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 2) ? 'selected' : '' ?>>Jember</option>
+							<option value="3" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 3) ? 'selected' : '' ?>>Blitar</option>
+							<option value="4" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 4) ? 'selected' : '' ?>>Tulungagung</option>
+							<option value="5" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 5) ? 'selected' : '' ?>>Jakarta</option>
+							<option value="6" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 6) ? 'selected' : '' ?>>Trenggalek</option>
+							<option value="7" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 7) ? 'selected' : '' ?>>Jombang</option>
+							<option value="8" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 8) ? 'selected' : '' ?>>Pasuruan</option>
+							<option value="9" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 9) ? 'selected' : '' ?>>Banyuwangi</option>
 						</select>
 						<select class="select2" id="provinsi" name="id_provinsi_tinggal">
-							<option value="" <?php if ($data['id_provinsi_tinggal'] == '') echo 'selected' ?>>-Pilih Provinsi-</option>
-							<option value="1" <?php if ($data['id_provinsi_tinggal'] == 1) echo 'selected' ?>>Jawa Timur</option>
-							<option value="2" <?php if ($data['id_provinsi_tinggal'] == 2) echo 'selected' ?>>Jawa Tengah</option>
-							<option value="3" <?php if ($data['id_provinsi_tinggal'] == 3) echo 'selected' ?>>Jawa Barat</option>
-							<option value="4" <?php if ($data['id_provinsi_tinggal'] == 4) echo 'selected' ?>>DKI Jakarta</option>
-							<option value="5" <?php if ($data['id_provinsi_tinggal'] == 5) echo 'selected' ?>>Daerah Istimewa Yogyakarta</option>
-							<option value="6" <?php if ($data['id_provinsi_tinggal'] == 6) echo 'selected' ?>>Banten</option>
-							<option value="7" <?php if ($data['id_provinsi_tinggal'] == 7) echo 'selected' ?>>Sumatra Utara</option>
-							<option value="8" <?php if ($data['id_provinsi_tinggal'] == 8) echo 'selected' ?>>Sumatra Barat</option>
-							<option value="9" <?php if ($data['id_provinsi_tinggal'] == 9) echo 'selected' ?>>Riau</option>
+							<option value="" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == '') ? 'selected' : '' ?>>-Pilih Provinsi-</option>
+							<option value="1" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == 1) ? 'selected' : '' ?>>Jawa Timur</option>
+							<option value="2" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == 2) ? 'selected' : '' ?>>Jawa Tengah</option>
+							<option value="3" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == 3) ? 'selected' : '' ?>>Jawa Barat</option>
+							<option value="4" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == 4) ? 'selected' : '' ?>>DKI Jakarta</option>
+							<option value="5" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == 5) ? 'selected' : '' ?>>Daerah Istimewa Yogyakarta</option>
+							<option value="6" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == 6) ? 'selected' : '' ?>>Banten</option>
+							<option value="7" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == 7) ? 'selected' : '' ?>>Sumatra Utara</option>
+							<option value="8" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == 8) ? 'selected' : '' ?>>Sumatra Barat</option>
+							<option value="9" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == 9) ? 'selected' : '' ?>>Riau</option>
 						</select>
 					</div>
 				</div>
@@ -214,48 +209,48 @@
 				<b class="judul">DATA PENDIDIKAN</b>
 				<div class="inputfield">
 					<label class="dataDiri">Nama Institusi</label>
-					<input class="diri" name="nama_institusi" id="namaInstitusi" type="text" placeholder="Masukkan Nama Sekolah/Universitas/Kantor" value="<?= $data['nama_institusi'] ?? '' ?>">
+					<input class="diri" name="nama_institusi" id="namaInstitusi" type="text" placeholder="Masukkan Nama Sekolah/Universitas/Kantor" value="<?= isset($data['nama_institusi']) ? $data['nama_institusi'] : '' ?>">
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri">Alamat Institusi</label>
-					<textarea name="alamat_institusi" placeholder="Masukkan Alamat Institusi" class="textarea"><?php echo $data['alamat_institusi'] ?></textarea>
+					<textarea name="alamat_institusi" placeholder="Masukkan Alamat Institusi" class="textarea"><?= isset($data['alamat_institusi']) ? $data['alamat_institusi'] : '' ?></textarea>
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri"> </label>
 					<div style="width: 100%;">
 						<select class="select" name="id_kota_institusi" id = "alamatInstitusi">
-							<option value="" <?php if ($data['id_kota_institusi'] == '') echo 'selected' ?>>-Pilih Kota-</option>
-							<option value="1" <?php if ($data['id_kota_institusi'] == 1) echo 'selected' ?>>Kediri</option>
-							<option value="2" <?php if ($data['id_kota_institusi'] == 2) echo 'selected' ?>>Jember</option>
-							<option value="3" <?php if ($data['id_kota_institusi'] == 3) echo 'selected' ?>>Blitar</option>
-							<option value="4" <?php if ($data['id_kota_institusi'] == 4) echo 'selected' ?>>Tulungagung</option>
-							<option value="5" <?php if ($data['id_kota_institusi'] == 5) echo 'selected' ?>>Jakarta</option>
-							<option value="6" <?php if ($data['id_kota_institusi'] == 6) echo 'selected' ?>>Trenggalek</option>
-							<option value="7" <?php if ($data['id_kota_institusi'] == 7) echo 'selected' ?>>Jombang</option>
-							<option value="8" <?php if ($data['id_kota_institusi'] == 8) echo 'selected' ?>>Pasuruan</option>
-							<option value="9" <?php if ($data['id_kota_institusi'] == 9) echo 'selected' ?>>Banyuwangi</option>
+							<option value="" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == '') ? 'selected' : '' ?>>-Pilih Kota-</option>
+							<option value="1" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 1) ? 'selected' : '' ?>>Kediri</option>
+							<option value="2" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 2) ? 'selected' : '' ?>>Jember</option>
+							<option value="3" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 3) ? 'selected' : '' ?>>Blitar</option>
+							<option value="4" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 4) ? 'selected' : '' ?>>Tulungagung</option>
+							<option value="5" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 5) ? 'selected' : '' ?>>Jakarta</option>
+							<option value="6" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 6) ? 'selected' : '' ?>>Trenggalek</option>
+							<option value="7" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 7) ? 'selected' : '' ?>>Jombang</option>
+							<option value="8" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 8) ? 'selected' : '' ?>>Pasuruan</option>
+							<option value="9" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 9) ? 'selected' : '' ?>>Banyuwangi</option>
 						</select>
 						<select class="select2" name="id_provinsi_institusi" id = "alamatInstitusi">
-							<option value="" <?php if ($data['id_provinsi_institusi'] == '') echo 'selected' ?>>-Pilih Provinsi-</option>
-							<option value="1" <?php if ($data['id_provinsi_institusi'] == 1) echo 'selected' ?>>Jawa Timur</option>
-							<option value="2" <?php if ($data['id_provinsi_institusi'] == 2) echo 'selected' ?>>Jawa Tengah</option>
-							<option value="3" <?php if ($data['id_provinsi_institusi'] == 3) echo 'selected' ?>>Jawa Barat</option>
-							<option value="4" <?php if ($data['id_provinsi_institusi'] == 4) echo 'selected' ?>>DKI Jakarta</option>
-							<option value="5" <?php if ($data['id_provinsi_institusi'] == 5) echo 'selected' ?>>Daerah Istimewa Yogyakarta</option>
-							<option value="6" <?php if ($data['id_provinsi_institusi'] == 6) echo 'selected' ?>>Banten</option>
-							<option value="7" <?php if ($data['id_provinsi_institusi'] == 7) echo 'selected' ?>>Sumatra Utara</option>
-							<option value="8" <?php if ($data['id_provinsi_institusi'] == 8) echo 'selected' ?>>Sumatra Barat</option>
-							<option value="9" <?php if ($data['id_provinsi_institusi'] == 9) echo 'selected' ?>>Riau</option>
+							<option value="" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == '') ? 'selected' : '' ?>>-Pilih Provinsi-</option>
+							<option value="1" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == 1) ? 'selected' : '' ?>>Jawa Timur</option>
+							<option value="2" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == 2) ? 'selected' : '' ?>>Jawa Tengah</option>
+							<option value="3" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == 3) ? 'selected' : '' ?>>Jawa Barat</option>
+							<option value="4" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == 4) ? 'selected' : '' ?>>DKI Jakarta</option>
+							<option value="5" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == 5) ? 'selected' : '' ?>>Daerah Istimewa Yogyakarta</option>
+							<option value="6" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == 6) ? 'selected' : '' ?>>Banten</option>
+							<option value="7" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == 7) ? 'selected' : '' ?>>Sumatra Utara</option>
+							<option value="8" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == 8) ? 'selected' : '' ?>>Sumatra Barat</option>
+							<option value="9" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == 9) ? 'selected' : '' ?>>Riau</option>
 						</select>
 					</div>
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri">Kelas/Semester</label>
-					<input class="diri" id="kelas" name="kelas" type="text" placeholder="Masukkan Kelas/Semester" value="<?= $data['kelas'] ?? '' ?>">
+					<input class="diri" id="kelas" name="kelas" type="text" placeholder="Masukkan Kelas/Semester" value="<?= isset($data['kelas']) ? $data['kelas'] : '' ?>">
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri">Jurusan</label>
-					<input class="diri" name="jurusan" type="text" placeholder="Masukkan Jurusan" value="<?= $data['jurusan'] ?? '' ?>">
+					<input class="diri" name="jurusan" type="text" placeholder="Masukkan Jurusan" value="<?= isset($data['jurusan']) ? $data['jurusan'] : '' ?>">
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri"> </label>

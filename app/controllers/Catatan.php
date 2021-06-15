@@ -35,12 +35,10 @@ class Catatan extends Controller {
 
     public function update($id)
     {
-        $this->model('Catatan_model')->updateCatatan($_POST, $id);
+        $this->model('Catatan_model')->updateCatatan($_POST, $id_catatan);
         header('Location: '. BASEURL . '/catatan');
         exit;
         
     }
-
-
 }
 ?>

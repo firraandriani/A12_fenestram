@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>My Profile</title>
-	<link href="<?= BASEURL ?>/css/catatan.css" rel="stylesheet" type="text/css">
+	<link href="<?= BASEURL ?>/css/My Profile.css" rel="stylesheet" type="text/css">
 </head>
 <body class="background">
 	<header>
@@ -18,7 +18,7 @@
             <div class="nav-btn">
                 <div class="nav-links">
                     <ul>
-                    	<li class="nav-link" style="--i: .6s">
+                    <li class="nav-link" style="--i: .6s">
                             <a href="<?= BASEURL ?>/beranda"><b>Beranda</b></a>
                         </li>
                         <li class="nav-link" style="--i: .85s">
@@ -33,7 +33,7 @@
                         <li class="nav-link" style="--i: 1.35s">
                             <a href="#"><img src="<?= BASEURL ?>/img/Profil.png" width="40" height="40"><i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
-								<ul>
+                                <ul>
                                     <li class="dropdown-link">
                                     	<a href="#" style="color: #A9A9A9;"><?= $data['nama'] ?? '' ?></a>
                                     </li>
@@ -62,24 +62,43 @@
         </div>
     </header>
 	<div class="kotak">
-        <form action="<?= BASEURL; ?>/catatan/update/<?= $data['id_catatan']; ?>" method="post">
-            <table class="form">
-                <tr>
-                    <td><h1>ID Catatan : <?= $data['id_catatan']; ?> </h1></td>
-                </tr>
-                <tr>
-                    <td><label for="judulBuku">Judul Buku</label></td>
-                    <td><input type="text" name="judul_buku" class="judul" value="<?= $data['judul_buku']; ?>"></td>
-                </tr>
-                <tr>
-                    <td><label for="tanggalBaca">Tanggal Baca</label></td>
-                    <td><input type="date" name="jadwal_baca" class="tanggal" value="<?= isset($data['jadwal_baca']) ? $data['jadwal_baca'] : '' ?>"></td>
-                </tr>
-            </table>
-            <button type="submit">Edit Catatan</button>
-        </form>
+	    <div>
+	    	<h1 class="petunjuk">Petunjuk Pengisian Ganti Akun</h1>
+	    	<ul class="penjelasan">
+				<li>Klik tombol <a href="beranda.html">save</a>, jika anda sudah selesai mengubah akun Anda.</li>
+			</ul>
+			<hr class="garis">
+			<br>
+	    </div>
+		<form action="<?= BASEURL ?>/Akun/update" method="post">
+			<div class="form">
+				<b class="judul">DATA AKUN</b>
+				<div class="inputfield">
+                    <label class="dataDiri">Nama Lengkap *</label>
+					<input class="diri" id="namaLengkap" name="nama" type="text" placeholder="Masukkan Nama Lengkap Anda" value="<?= $data['nama'] ?? '' ?>">
+				</div>
+				<div class="inputfield">
+                    <label class="dataDiri">Alamat Email *</label>
+					<input class="diri" id="email" name="email" type="email" placeholder="Masukkan Email Baru Anda" value="<?= $data['email'] ?? '' ?>">
+				</div>
+				<div class="inputfield">
+					<label class="dataDiri">Password *</label>
+					<input class="diri"type="password" name="password" placeholder="Masukkan Password Baru Anda" required >
+				</div>
+				<div class="inputfield">
+                    <label class="dataDiri">Re-Password *</label>
+					<input class="diri"type="password" name="password2" placeholder="Masukkan Re-Password Baru Anda" required>
+				</div>
+				<div class="inputfield">
+					<label class="dataDiri"> </label>
+					<div style="width: 100%">
+						<button type="submit" name="akun" id="tombol_akun" class="button">SAVE</button>
+						<input type="reset" class="button2" value="RESET">
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
-
 	<footer>
 		<div class="semua">
 			<div class="left box">

@@ -37,18 +37,15 @@ class Catatan_model{
         return $this->db->rowCount();
     }
 
-    public function updateCatatan($data, $id)
+    public function updateCatatan($data)
     {
-        $tanggal = $data['tanggalBaca'];
-        $judul = $data['judulBuku'];
-        $query = "UPDATE `catatan_user` SET `jadwal_baca`=$tanggal,`judul_buku`='$judul' WHERE id_catatan=$id";
+        $query = "UPDATE catatan_user SET jadwal_baca = :jadwal_baca, judul_buku = :judul_buku WHERE id_catatan= :id_catatan";
         $this->db->query($query);
+        $this->db->bind('jadwal_baca', $data['jadwal_baca']);
+        $this->db->bind('judul_buku', $data['judul_buku']);
+        $this->db->bind('id_catatan', $id_catatan);
         $this->db->execute();
         return $this->db->rowCount();
     }
-
-
-
-
 }
 ?>

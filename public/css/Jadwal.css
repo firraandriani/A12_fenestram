@@ -128,10 +128,6 @@ header{
     transition: .3s;
 }
 
-.dropdown-link:nth-last-child(4){
-    border-bottom: 1.5px solid rgba(0,0,0,0.5);
-}
-
 .dropdown-link:first-child{
     border-bottom: 1.5px solid rgba(0,0,0,0.5);
 }

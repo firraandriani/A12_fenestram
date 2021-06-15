@@ -19,7 +19,7 @@
             <div class="nav-btn">
                 <div class="nav-links">
                     <ul>
-                    <li class="nav-link" style="--i: .6s">
+                    	<li class="nav-link" style="--i: .6s">
                             <a href="<?= BASEURL ?>/beranda"><b>Beranda</b></a>
                         </li>
                         <li class="nav-link" style="--i: .85s">
@@ -34,15 +34,15 @@
                         <li class="nav-link" style="--i: 1.35s">
                             <a href="#"><img src="<?= BASEURL ?>/img/Profil.png" width="40" height="40"><i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
-                                <ul>
+								<ul>
                                     <li class="dropdown-link">
                                     	<a href="#" style="color: #A9A9A9;"><?= $data['nama'] ?? '' ?></a>
                                     </li>
-                                    <li class="dropdown-link" style="">
-                                        <a href="#" style="color: #A9A9A9"><?= $data['tanggal_lahir'] ?? '' ?></a>
+									<li class="dropdown-link" style="background-color: #FFFFFF; font-family: open sans; font-size: 0.8em;">
+                                        <img src="<?= BASEURL ?>/img/images (2).png" width="25" height="25" style="margin-left: 10px; margin-top: 10px"><span><a href="<?= BASEURL ?>/akun" style="color: #000; margin-left: 10px;">Pengaturan Akun</a></span>
                                     </li>
-                                    <li class="dropdown-link" style="background-color: #FFFFFF; font-family: open sans; font-size: 0.8em;">
-                                        <img src="<?= BASEURL ?>/img/images (2).png" width="25" height="25" style="margin-left: 10px; margin-top: 10px"><span><a href="<?= BASEURL ?>/profil" style="color: #000; margin-left: 10px;">Pengaturan Akun</a></span>
+									<li class="dropdown-link" style="background-color: #FFFFFF; font-family: open sans; font-size: 0.8em;">
+                                        <img src="<?= BASEURL ?>/img/Profil.png" width="25" height="25" style="margin-left: 10px; margin-top: 10px"><span><a href="<?= BASEURL ?>/profil" style="color: #000; margin-left: 10px;">Pengaturan Profil</a></span>
                                     </li>
                                     <li class="dropdown-link" style="background-color: #FFFFFF; font-family: open sans; font-size: 0.8em;">
                                         <img src="<?= BASEURL ?>/img/25706.png" width="25" height="25" style="margin-left: 10px; margin-top: 10px"><span><a href="<?= BASEURL ?>/logout" style="color: #000; margin-left: 10px;">Keluarkan Akun</a></span>

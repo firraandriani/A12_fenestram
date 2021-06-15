@@ -5,7 +5,14 @@ class Profil extends Controller {
     {
         $data = $this->model('Profil_model')->getProfile();
 
-        $data['id_hobi'] = explode(',', $data['id_hobi']);
+        if (!empty($data)) {
+            $data['id_hobi'] = explode(',', $data['id_hobi']);
+        }
+
+        $id_user = $_SESSION['id'];
+        $user = $this->model('User_model')->getUserById($id_user);
+
+        $data['nama'] = $user['nama'];
 
         $this->view('profil/index', $data);
     }
