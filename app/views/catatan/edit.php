@@ -62,36 +62,22 @@
         </div>
     </header>
 	<div class="kotak">
-        <form action="<?= BASEURL; ?>/catatan/tambah" method="post">
+        <form action="<?= BASEURL; ?>/catatan/update/<?= $data['id_catatan']; ?>" method="post">
             <table class="form">
                 <tr>
+                    <td><h1>ID Catatan : <?= $data['id_catatan']; ?> </h1></td>
+                </tr>
+                <tr>
                     <td><label for="judulBuku">Judul Buku</label></td>
-                    <td><input type="text" name="judulBuku" class="judul"></td>
+                    <td><input type="text" name="judulBuku" class="judul" value="<?= $data['judul_buku']; ?>"></td>
                 </tr>
                 <tr>
                     <td><label for="tanggalBaca">Tanggal Baca</label></td>
-                    <td><input type="date" name="tanggalBaca" class="tanggal"></td>
+                    <td><input type="date" name="tanggalBaca" class="tanggal" value="<?= $data['jadwal_baca']; ?>"></td>
                 </tr>
             </table>
-            <button type="submit">Tambahkan Catatan</button>
+            <button type="submit">Edit Catatan</button>
         </form>
-
-        <table class="data_catatan">
-            <tr>
-                <th>Tanggal</th>
-                <th>Judul Buku</th>
-                <th>Jadwal Baca</th>
-                <th>Action</th>
-            </tr>
-            <?php foreach($data['catatan'] as $ctt) : ?>
-                <tr>
-                    <td><?= $ctt['tanggal'] ?></td>
-                    <td><?= $ctt['judul_buku'] ?></td>
-                    <td><?= $ctt['jadwal_baca'] ?></td>
-                    <td><a class = 'edit' href = '<?= BASEURL;?>/catatan/edit/<?= $ctt['id_catatan']?>'><img src='<?= BASEURL ?>/img/edit.png' width='20' height='20'>Edit</a><a href="<?= BASEURL;?>/catatan/hapus/<?= $ctt['id_catatan']?>" class="hapus"><img src='<?= BASEURL ?>/img/hapus.png' width='20' height='20'>Hapus</a></td>
-                </tr>
-            <?php endforeach; ?>
-        </table>
 	</div>
 
 	<footer>

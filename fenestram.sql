@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jun 2021 pada 12.29
+-- Waktu pembuatan: 15 Jun 2021 pada 05.49
 -- Versi server: 10.4.17-MariaDB
--- Versi PHP: 7.4.15
+-- Versi PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,7 +52,7 @@ INSERT INTO `anggota_jenis` (`id_jenis_anggota`, `jenis_anggota`) VALUES
 CREATE TABLE `catatan_user` (
   `id_catatan` int(11) NOT NULL,
   `tanggal` timestamp NOT NULL DEFAULT current_timestamp(),
-  `jadwal_baca` date NOT NULL,
+  `jadwal_baca` varchar(100) NOT NULL,
   `judul_buku` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -61,7 +61,7 @@ CREATE TABLE `catatan_user` (
 --
 
 INSERT INTO `catatan_user` (`id_catatan`, `tanggal`, `jadwal_baca`, `judul_buku`) VALUES
-(13, '2021-06-15 03:46:32', '2021-06-15', 'Matahari');
+(13, '2021-06-15 03:46:32', '2021/06/15', 'Matahari');
 
 -- --------------------------------------------------------
 
@@ -163,7 +163,7 @@ INSERT INTO `pekerjaan` (`id_pekerjaan`, `nama_pekerjaan`) VALUES
 
 CREATE TABLE `profil` (
   `id` int(255) NOT NULL,
-  `nomor_identitas` bigint(255) DEFAULT NULL,
+  `nomor_identitas` bigint(255) NOT NULL,
   `nama_panggilan` varchar(60) DEFAULT NULL,
   `id_kota` int(5) NOT NULL,
   `tanggal_lahir` date NOT NULL,
