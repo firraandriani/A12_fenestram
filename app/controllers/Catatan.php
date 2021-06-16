@@ -5,6 +5,10 @@ class Catatan extends Controller {
     {   
         session_start();
         $data['catatan'] = $this->model('Catatan_model')->getallcatatan($_SESSION["id"]);
+
+        $user = $this->model('User_model')->getUserById($_SESSION["id"]);
+        $data['nama'] = $user['nama'];
+
         $this->view('catatan/index', $data);
     }
 
@@ -29,8 +33,12 @@ class Catatan extends Controller {
     {   
         session_start();
         $id_catatan = $id;
-        $data['data_catatan'] = $this->model('Catatan_model')->getCatatanById($id);
-        $this->view('catatan/edit', $data['data_catatan'], $id_catatan);
+        $data = $this->model('Catatan_model')->getCatatanById($id);
+        
+        $user = $this->model('User_model')->getUserById($_SESSION["id"]);
+        $data['nama'] = $user['nama'];
+        
+        $this->view('catatan/edit', $data, $id_catatan);
     }
 
     public function update($id)

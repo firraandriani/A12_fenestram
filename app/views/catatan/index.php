@@ -85,7 +85,7 @@
             </tr>
             <?php foreach($data['catatan'] as $ctt) : ?>
                 <tr>
-                    <td><?= $ctt['tanggal'] ?></td>
+                    <td><?= $ctt['date'] ?></td>
                     <td><?= $ctt['judul_buku'] ?></td>
                     <td><?= $ctt['jadwal_baca'] ?></td>
                     <td><a class = 'edit' href = '<?= BASEURL;?>/catatan/edit/<?= $ctt['id_catatan']?>'><img src='<?= BASEURL ?>/img/edit.png' width='20' height='20'>Edit</a><a href="<?= BASEURL;?>/catatan/hapus/<?= $ctt['id_catatan']?>" class="hapus"><img src='<?= BASEURL ?>/img/hapus.png' width='20' height='20'>Hapus</a></td>

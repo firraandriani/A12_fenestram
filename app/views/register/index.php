@@ -22,6 +22,17 @@
 
 <body>
 
+	<?php
+
+	session_start();
+	
+	if (isset($_SESSION['messages'])) {
+		echo "<script type='text/javascript'>alert('" . $_SESSION['messages'] ."');</script>";
+		unset($_SESSION['messages']);
+	}
+
+	?>
+
 	<!-- Logo -->
 	<div class="logo">
         <img src="http://localhost/FinalProject/public/img/Logo.png">

@@ -10,7 +10,7 @@ class Catatan_model{
     }
 
     public function getallcatatan($id){
-        $this->db->query('SELECT * FROM catatan_user WHERE id_user = '.$id);
+        $this->db->query('SELECT *, DATE_FORMAT(tanggal, "%Y-%m-%d") as date FROM catatan_user WHERE id_user = '.$id);
         return $this->db->resultSet();
     }
 
@@ -43,8 +43,9 @@ class Catatan_model{
         $this->db->query($query);
         $this->db->bind('jadwal_baca', $data['jadwal_baca']);
         $this->db->bind('judul_buku', $data['judul_buku']);
-        $this->db->bind('id_catatan', $id_catatan);
+        $this->db->bind('id_catatan', $data['id_catatan']);
         $this->db->execute();
+
         return $this->db->rowCount();
     }
 }

@@ -39,7 +39,10 @@ class Login extends Controller {
             }
 
             header('Location: ' . BASEURL . '/beranda');
-        } else {
+        } 
+        
+        else {
+            $_SESSION['messages'] = 'Kombinasi email dan password salah';
             header('Location: ' . BASEURL . '/login');
         }
     }

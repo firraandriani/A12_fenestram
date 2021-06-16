@@ -65,6 +65,9 @@
         <form action="<?= BASEURL; ?>/catatan/update/<?= $data['id_catatan']; ?>" method="post">
             <table class="form">
                 <tr>
+					<td><input type="hidden" name="id_catatan" value="<?= $data['id_catatan'] ?? '' ?>"></d>
+                </tr>
+                <tr>
                     <td><label for="judulBuku">Judul Buku</label></td>
                     <td><input type="text" name="judul_buku" class="judul" value="<?= $data['judul_buku']; ?>"></td>
                 </tr>

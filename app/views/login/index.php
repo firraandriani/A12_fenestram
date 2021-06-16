@@ -12,6 +12,15 @@
 </head>
 <body>
 
+	<?php
+	
+	if (isset($_SESSION['messages'])) {
+		echo "<script type='text/javascript'>alert('" . $_SESSION['messages'] ."');</script>";
+		unset($_SESSION['messages']);
+	}
+
+	?>
+
 	<!-- Logo Start -->
 	<div class="logo">
 		<img src="http://localhost/FinalProject/public/img/Logo.png">
@@ -23,12 +32,12 @@
 		<h2>Login</h2>
 		<form action="<?= BASEURL; ?>/Login/loginPermission" method="post">
 			<div class="inputBox">
-				<input type="text" name="email" required></input>
+				<input type="text" name="email" required oninvalid="this.setCustomValidity('Email tidak boleh kosong')" oninput="setCustomValidity('')"></input>
 				<label>Email</label>
 				<span class="input user"></span>
 			</div>
 			<div class="inputBox">
-				<input type="password" name="password" required></input>
+				<input type="password" name="password" required minlength="3" maxlength="8" oninvalid="this.setCustomValidity('Password tidak boleh kosong')" oninput="setCustomValidity('')"></input>
 				<label>Password</label>
 				<span class="input pass"></span>
 			</div>

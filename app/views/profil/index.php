@@ -7,6 +7,14 @@
 	<link href="<?= BASEURL ?>/css/My Profile.css" rel="stylesheet" type="text/css">
 </head>
 <body class="background">
+	<?php
+
+	if (isset($_SESSION['messages'])) {
+		echo "<script type='text/javascript'>alert('" . $_SESSION['messages'] ."');</script>";
+		unset($_SESSION['messages']);
+	}
+
+	?>
 	<header>
         <div class="container">
             <input type="checkbox" name="" id="check">
@@ -100,6 +108,7 @@
 							<option value="7" <?= (isset($data['id_kota']) && $data['id_kota'] == 7) ? 'selected' : '' ?>>Jombang</option>
 							<option value="8" <?= (isset($data['id_kota']) && $data['id_kota'] == 8) ? 'selected' : '' ?>>Pasuruan</option>
 							<option value="9" <?= (isset($data['id_kota']) && $data['id_kota'] == 9) ? 'selected' : '' ?>>Banyuwangi</option>
+							<option value="9" <?= (isset($data['id_kota']) && $data['id_kota'] == 10) ? 'selected' : '' ?>>Surabaya</option>
 						</select>
 					</div>
 				</div> 
@@ -189,6 +198,7 @@
 							<option value="7" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 7) ? 'selected' : '' ?>>Jombang</option>
 							<option value="8" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 8) ? 'selected' : '' ?>>Pasuruan</option>
 							<option value="9" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 9) ? 'selected' : '' ?>>Banyuwangi</option>
+							<option value="10" <?= (isset($data['id_kota_tinggal']) && $data['id_kota_tinggal'] == 10) ? 'selected' : '' ?>>Surabaya</option>
 						</select>
 						<select class="select2" id="provinsi" name="id_provinsi_tinggal">
 							<option value="" <?= (isset($data['id_provinsi_tinggal']) && $data['id_provinsi_tinggal'] == '') ? 'selected' : '' ?>>-Pilih Provinsi-</option>
@@ -229,6 +239,7 @@
 							<option value="7" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 7) ? 'selected' : '' ?>>Jombang</option>
 							<option value="8" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 8) ? 'selected' : '' ?>>Pasuruan</option>
 							<option value="9" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 9) ? 'selected' : '' ?>>Banyuwangi</option>
+							<option value="10" <?= (isset($data['id_kota_institusi']) && $data['id_kota_institusi'] == 10) ? 'selected' : '' ?>>Surabaya</option>
 						</select>
 						<select class="select2" name="id_provinsi_institusi" id = "alamatInstitusi">
 							<option value="" <?= (isset($data['id_provinsi_institusi']) && $data['id_provinsi_institusi'] == '') ? 'selected' : '' ?>>-Pilih Provinsi-</option>

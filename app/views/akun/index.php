@@ -7,6 +7,14 @@
 	<link href="<?= BASEURL ?>/css/My Profile.css" rel="stylesheet" type="text/css">
 </head>
 <body class="background">
+	<?php
+
+	if (isset($_SESSION['messages'])) {
+		echo "<script type='text/javascript'>alert('" . $_SESSION['messages'] ."');</script>";
+		unset($_SESSION['messages']);
+	}
+
+	?>
 	<header>
         <div class="container">
             <input type="checkbox" name="" id="check">
@@ -75,19 +83,19 @@
 				<b class="judul">DATA AKUN</b>
 				<div class="inputfield">
                     <label class="dataDiri">Nama Lengkap *</label>
-					<input class="diri" id="namaLengkap" name="nama" type="text" placeholder="Masukkan Nama Lengkap Anda" value="<?= $data['nama'] ?? '' ?>">
+					<input class="diri" id="namaLengkap" name="nama" type="text" placeholder="Masukkan Nama Lengkap Anda" value="<?= $data['nama'] ?? '' ?>" required oninvalid="this.setCustomValidity('Nama Lengkap tidak boleh kosong')" oninput="setCustomValidity('')">
 				</div>
 				<div class="inputfield">
                     <label class="dataDiri">Alamat Email *</label>
-					<input class="diri" id="email" name="email" type="email" placeholder="Masukkan Email Baru Anda" value="<?= $data['email'] ?? '' ?>">
+					<input class="diri" id="email" name="email" type="email" placeholder="Masukkan Email Baru Anda" value="<?= $data['email'] ?? '' ?>" required oninvalid="this.setCustomValidity('Format Email yang Anda Masukkan Salah')" oninput="setCustomValidity('')">
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri">Password *</label>
-					<input class="diri"type="password" name="password" placeholder="Masukkan Password Baru Anda" required >
+					<input class="diri"type="password" name="password" placeholder="Masukkan Password Baru Anda" required minlength="3" maxlength="8" oninvalid="this.setCustomValidity('Password tidak boleh kosong')" oninput="setCustomValidity('')">
 				</div>
 				<div class="inputfield">
                     <label class="dataDiri">Re-Password *</label>
-					<input class="diri"type="password" name="password2" placeholder="Masukkan Re-Password Baru Anda" required>
+					<input class="diri"type="password" name="password2" placeholder="Masukkan Re-Password Baru Anda" required minlength="3" maxlength="8" oninvalid="this.setCustomValidity('Re-Password tidak boleh kosong')" oninput="setCustomValidity('')">
 				</div>
 				<div class="inputfield">
 					<label class="dataDiri"> </label>
