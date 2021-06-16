@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jun 2021 pada 18.42
+-- Waktu pembuatan: 16 Jun 2021 pada 13.55
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.15
 
@@ -64,7 +64,13 @@ CREATE TABLE `catatan_user` (
 INSERT INTO `catatan_user` (`id_catatan`, `id_user`, `tanggal`, `jadwal_baca`, `judul_buku`) VALUES
 (15, 6, '2021-06-15 13:13:53', '0000-00-00', 'Matahari'),
 (16, 2, '2021-06-15 16:17:59', '0000-00-00', 'Bulan'),
-(18, 2, '2021-06-15 16:40:36', '2021-06-24', 'Matahari');
+(18, 2, '2021-06-15 16:40:36', '2021-06-24', 'Matahari'),
+(19, 2, '2021-06-15 17:00:53', '0000-00-00', ''),
+(20, 3, '2021-06-16 00:47:07', '2021-06-15', 'Dear Na'),
+(21, 3, '2021-06-16 01:02:01', '2021-06-10', 'Rumah Kaca'),
+(22, 3, '2021-06-16 01:02:43', '2021-06-09', 'Selena'),
+(23, 3, '2021-06-16 01:04:46', '2021-06-18', 'The In Between'),
+(24, 7, '2021-06-16 02:37:49', '2021-06-01', 'Bulan');
 
 -- --------------------------------------------------------
 
@@ -131,7 +137,8 @@ INSERT INTO `kota` (`id_kota`, `nama_kota`) VALUES
 (6, 'Trenggalek'),
 (7, 'Jombang'),
 (8, 'Pasuruan'),
-(9, 'Banyuwangi');
+(9, 'Banyuwangi'),
+(10, 'Surabaya');
 
 -- --------------------------------------------------------
 
@@ -192,14 +199,13 @@ CREATE TABLE `profil` (
 --
 
 INSERT INTO `profil` (`id`, `nomor_identitas`, `nama_panggilan`, `id_kota`, `tanggal_lahir`, `nomor_hp`, `id_hobi`, `id_jenis_kelamin`, `id_jenis_anggota`, `id_status_perkawinan`, `id_pekerjaan`, `alamat_tinggal`, `id_kota_tinggal`, `id_provinsi_tinggal`, `nama_institusi`, `alamat_institusi`, `id_kota_institusi`, `id_provinsi_institusi`, `kelas`, `jurusan`) VALUES
-(15, 192410103000, 'Ibnu', 3, '2020-06-14', 85122123456, '1', 1, 2, 0, 1, 'Jalan Gurame', 3, 1, 'Univ Jember', 'Jalan Kalimantan', 2, 1, 1, 'SI'),
-(16, 192410103000, 'Fitri', 3, '1999-01-21', 85122123456, '1', 2, 3, 2, 5, 'Jalan Bali', 3, 1, 'Blitar', 'Jalan Kalimantan', 2, 1, 1, 'SI'),
-(17, 55555, 'Panggilan', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
-(18, 55555, 'Panggilan', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
-(19, 55555, 'Panggilan', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
-(20, 55555, 'Panggilan', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
-(21, 5555666777, 'Panggilanaa', 3, '2021-06-15', 12345, '1,4,5', 2, 2, 2, 1, 'DDD', 2, 5, 'Univ Jember', 'FFF', 4, 4, 56, '12'),
-(22, 1111, 'aaaaa', 5, '2021-05-30', 86578792, '1,3', 1, 2, 1, 1, 'jj', 2, 4, '', '', 0, 0, 0, '');
+(16, 0, 'Fitri', 3, '1999-01-21', 85122123456, '1', 2, 3, 2, 5, 'Jalan Halmahera, No. 86', 3, 1, '', '', 0, 0, 0, ''),
+(21, 192410101300, 'Ibnu', 4, '2000-09-11', 85654345321, '1,5', 1, 2, 1, 1, 'Jalan Gurame, Dusun Tlogo', 3, 1, 'Universitas Negeri Surabaya', 'Jl. Lidah Wetan, Lidah Wetan, Kec. Lakarsantri,', 10, 1, 5, 'Teknik Informatika'),
+(22, 192410101200, 'Nana', 1, '2000-05-08', 85764345234, '1,3', 2, 3, 1, 5, 'Jalan Bali, No.89', 1, 1, '', '', 0, 0, 0, ''),
+(23, 0, 'Bandi', 3, '1976-07-25', 0, '1,3', 1, 3, 2, 5, 'Jalan Halmahera No.86, Klampok', 3, 1, '', '', 0, 0, 0, ''),
+(24, 192410101122, 'Anung', 9, '2021-07-02', 0, NULL, 1, 2, NULL, 1, 'Banyuwangi', 9, 1, '', '', 0, 0, 0, ''),
+(25, 0, 'Farah', 3, '2000-08-16', 0, '1,3', 2, 3, NULL, 5, 'Jalan Warna', 4, 1, '', '', 0, 0, 0, ''),
+(26, 0, '', 9, '2021-06-25', 0, NULL, 2, 3, NULL, 3, 'Jalan Mantan', 3, 1, '', '', 0, 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -265,12 +271,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `email`, `password`, `nama`, `id_profil`) VALUES
-(1, 'firra.andriani22@gmaill.com', '1234', 'Firra Andriani', NULL),
 (2, 'nana.wijayanto@gmail.com', '123', 'Nana Wijayanto', 22),
 (3, 'penggemarpb40@gmail.com', '1234', 'Ibnu Qomaril Huda', 21),
-(4, 'anung.Firdauzy@gmail.com', '123', 'Anung Firdauzy', NULL),
+(4, 'anung.Firdauzy@gmail.com', '123', 'Anung Firdauzy', 24),
 (5, 'fitria.anggraeni@gmail.com', '1234', 'Fitria Anggraeni', 16),
-(6, 'test@gmail.com', '1234', 'test', NULL);
+(6, 'farahAdiwijaya@gmail.com', '12345', 'Farah Adiwijaya', 25),
+(7, 'subandi@gmail.com', '123', 'Subandi', 23),
+(8, 'hariMurti@gmail.com', '123', 'Hari Murti Rahayu', 26);
 
 --
 -- Indexes for dumped tables
@@ -351,7 +358,7 @@ ALTER TABLE `anggota_jenis`
 -- AUTO_INCREMENT untuk tabel `catatan_user`
 --
 ALTER TABLE `catatan_user`
-  MODIFY `id_catatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_catatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `gender`
@@ -369,7 +376,7 @@ ALTER TABLE `hobi`
 -- AUTO_INCREMENT untuk tabel `kota`
 --
 ALTER TABLE `kota`
-  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `pekerjaan`
@@ -381,7 +388,7 @@ ALTER TABLE `pekerjaan`
 -- AUTO_INCREMENT untuk tabel `profil`
 --
 ALTER TABLE `profil`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT untuk tabel `provinsi`
@@ -399,7 +406,7 @@ ALTER TABLE `status_kawin`
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
